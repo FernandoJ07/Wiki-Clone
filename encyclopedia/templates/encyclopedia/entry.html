@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}
+    {{ title_entry }}
+{% endblock %}
+
+{% block body %}
+
+	{% if error %}
+		<h1>{{error}}</h1>
+
+	{% else %}
+    	{{ entry }}
+    	<a class="btn btn-primary px-4" href="{% url 'edit_entry' title_entry %}">Edit</a>
+    {% endif %}
+{% endblock %}
